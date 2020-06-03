@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Ubuntu:wght@700&display=swap');
+@import'variables';
+
+body {
+    font-family: Roboto, sans-serif;
+    background: #F0f0f5;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $font-title;
+}
+
+#page-home {
+    height: 100vh;
+    background: url('../assets/home-background.svg') no-repeat;
+    background-position: 40vw bottom;
+}
+
+.container {
+    width:90%;
+    max-width: 1110px;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    header {
+        margin-top:40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            display: flex;
+            font-weight: 700;
+            color:$secondary;
+            span {
+                margin-right:16px;
+                display:flex;
+                background: url('../assets/log-in.svg') no-repeat;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    main {
+        max-width: 560px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        h1 {
+            font-size:54px;
+            color:$secondary;
+        }
+        p {
+            font-size:24px;
+            line-height: 38px;
+            margin-top: 24px;
+        }
+
+        .button {
+            margin-top:40px;
+            width:100%;
+            max-width: 360px;
+            background: $primary;
+            height: 72px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            transition:400ms;
+            font-weight: bold;
+            &:hover {
+                background: #2fb863;
+            }
+
+            .icon {
+                background-color: rgba(0,0,0,0.08);
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+                display: flex;
+                width: 72px;
+                height: 72px;
+                align-items: center;
+                justify-content: center;
+                &::before {
+                    content:'';
+                    background: url('../assets/search.svg') no-repeat;
+                    width:20px;
+                    height:20px;
+                }
+            }
+
+            .text {
+                flex:1;
+                color:white;
+                text-align: center;
+            }
+        }
+    }
+}
+@import'modal';
+@import'create-point';
+@import'search-results';
+@import'responsive';
