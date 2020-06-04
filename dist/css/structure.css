@@ -172,11 +172,12 @@ h1, h2, h3, h4, h5, h6 {
       margin-bottom: 40px;
       display: flex;
       align-items: center;
-      justify-content: space-between; }
+      justify-content: space-between;
+      width: 100%; }
       #page-create-point main form legend h2 {
         font-size: 24px; }
       #page-create-point main form legend span {
-        display: flex; }
+        font-size: 14px; }
     #page-create-point main form .field {
       flex: 1;
       display: flex;
@@ -307,6 +308,12 @@ h1, h2, h3, h4, h5, h6 {
         transform: translateX(-50%); }
       #page-home .container main {
         align-items: center; }
+  #page-create-point main form {
+    width: 100%; }
+    #page-create-point main form .field-group {
+      flex-direction: column; }
+      #page-create-point main form .field-group .field + .field {
+        margin-left: 0px; }
   #page-search-results .container main .cards {
     grid-template-columns: 1fr; } }
 

@@ -1,0 +1,19 @@
+{
+  "name": "next-level",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.1.0",
+    "nunjucks": "^3.2.1"
+  },
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lhdeveloper/nlw.git"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

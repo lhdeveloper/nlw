@@ -35,12 +35,13 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                width:100%;
 
                 h2 {
                     font-size:24px;
                 }
                 span {
-                    display: flex;
+                    font-size:14px;
                 }
             }
 

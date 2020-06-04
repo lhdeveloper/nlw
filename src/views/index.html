@@ -1,0 +1,29 @@
+{% extends "layout.html" %}}
+{% set pageId = "page-home" %}}
+
+<!-- content -->
+{% block container %}
+    <div class="container">
+        <!-- header-->
+        {% include "partials/header.html" %}
+        <main>
+            <h1>{{ title }}</h1>
+            <p>{{ description }}</p>
+            <a href="#" title="{{ buttonText }}" class="button pesquisar-coleta">
+                <span class="icon"></span>
+                <span class="text">{{ buttonText }}</span>
+            </a>
+        </main>
+    </div>
+{% endblock container %}
+
+<!-- modal  -->
+{% block modal %}
+    {% include "partials/modal.html" %}
+{% endblock modal %}
+
+<!-- scripts -->
+{% block scripts %}
+    <script src="/js/index.js"></script>
+{% endblock scripts %}
+
