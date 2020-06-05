@@ -29,19 +29,19 @@ server.get('/', (rec, res) =>{
     })
 })
 
+// MONTANDO ROTA DA PAGINA CREATE POINT
 server.get('/create-point', (req, res) =>{
-
     // query (parametros) que vem na url;
-    
     return res.render("create-point.html")
 })
 
+
+// MONTANDO ROTA DA PAGINA SAVE-POINT
 server.post('/save-point', (req, res) => {
     // req.body: o corpo do nosso formulario
     //console.log(req.body)
 
     // inserir dados no banco de dados
-
     const query = `
         INSERT INTO places (
             image,
@@ -72,22 +72,43 @@ server.post('/save-point', (req, res) => {
         console.log('Cadastrado com sucesso');
         console.log(this);
 
-        return res.render("create-point.html", { saved: true})
+       return res.render("create-point.html", { saved: true})
     };
 
     db.run(query, values, afterInsertData)
 
 })
 
+// MONTANDO ROTA DA PAGINA SEARCH
 server.get('/search', (req, res) =>{
-    db.all(`SELECT * FROM places`, function(err, rows){
-        if(err){
-            return console.log(err);
-        };
+    const search = req.query.search;
 
-        const total = rows.length;
-        return res.render("search-results.html", { places: rows, total})
-    });
+    if(search == ""){
+        // pesquisa vazia
+        db.all(`SELECT * FROM places`, function(err, rows){
+            if(err){
+                return console.log(err);
+            };
+    
+            const total = rows.length;
+    
+            return res.render("search-results.html", { places: rows, total})
+        });
+        
+    }else {
+        db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err, rows){
+            if(err){
+                return console.log(err);
+            };
+    
+            const total = rows.length;
+    
+            return res.render("search-results.html", { places: rows, total})
+        });
+    }
+
+
+   
 })
 
 // ligar o servidor

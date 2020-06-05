@@ -67,8 +67,9 @@
                 font-size:15px;
                 outline: none;
                 border-radius: 8px;
+                transition:background-color 200ms;
                 &:focus {
-                    background: rgba(0,0,0,0.1);
+                    background: rgba($primary, 0.3)
                 }
             }
 

@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
         transition: 400ms; }
         #modal .content form .field button:hover {
           background: #2fb86e; }
-  #modal.success .content {
+  #modal.success .content, #modal.error .content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
     -moz-user-select: -moz-none;
     -o-user-select: none;
     user-select: none; }
-    #modal.success .content img {
+    #modal.success .content img, #modal.error .content img {
       margin-bottom: 20px; }
 
 #page-create-point header a {
@@ -208,10 +208,11 @@ h1, h2, h3, h4, h5, h6 {
       padding: 15px 25px;
       font-size: 15px;
       outline: none;
-      border-radius: 8px; }
+      border-radius: 8px;
+      transition: background-color 200ms; }
       #page-create-point main form input:focus,
       #page-create-point main form select:focus {
-        background: rgba(0, 0, 0, 0.1); }
+        background: rgba(52, 203, 121, 0.3); }
     #page-create-point main form select {
       -webkit-appearance: none;
       -moz-appearance: none;
