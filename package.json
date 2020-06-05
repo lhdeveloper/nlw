@@ -4,7 +4,8 @@
     "express": "^4.17.1",
     "gulp": "^3.9.1",
     "gulp-sass": "^4.1.0",
-    "nunjucks": "^3.2.1"
+    "nunjucks": "^3.2.1",
+    "sqlite3": "^4.2.0"
   },
   "scripts": {
     "start": "nodemon src/server.js"
